@@ -28,9 +28,16 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="font-size:25px; margin: 10px;padding:10px;">
           <div class="navbar-nav">
             <a class="nav-item nav-link active" href="{% url 'blog-home' %}"><i class="fas fa-home"></i> Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="{% url 'blog-about' %}"><i class="fas fa-address-card"></i> About</a>
+            <a class="nav-item nav-link active" href="{% url 'blog-about' %}"><i class="fas fa-address-card"></i> About</a>
+            {% if user.is_authenticated %}
+              <!--<h3>Hi {{user.username}}</h3>
+              <button class="btn btn-outline-info" type="submit"><i class="fas fa-user-plus"></i>Logout</button>-->
+              <a class="nav-item nav-link active" href="{% url 'profile' %}"><i class="fas fa-user"></i> Profile <span class="sr-only">(current)</span></a>
+              <a class="nav-item nav-link active" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Logout <span class="sr-only">(current)</span></a>
+            {% else %}
             <a class="nav-item nav-link" href="{% url 'register' %}"><i class="fas fa-user-plus"></i> Sign up</a>
-            <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            <a class="nav-item nav-link" href="{% url 'login' %}" tabindex="-1" aria-disabled="true"><i class="fas fa-sign-in-alt"></i>Login</a>
+            {% endif %}
           </div>
         </div>
       </nav>
