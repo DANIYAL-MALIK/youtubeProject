@@ -8,8 +8,8 @@ def register(request):
     if request.method == 'POST':
         form=UserCreationForm(request.POST)
         if form.is_valid():
-            form.save()
             username=form.cleaned_data.get('username')
+            form.save()
             messages.success(request,f'Account Created for the {username}!')
             return redirect('login')
     else: 
@@ -25,7 +25,6 @@ def profile(request):
             p_form.save()
             messages.success(request,f'Your Account has been updated!')
             return redirect('profile')
-
     else:
         u_form=UserUpdateForm(instance=request.user)
         p_form=ProfileUpdateForm(instance=request.user.profile)
