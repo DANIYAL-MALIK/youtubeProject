@@ -7,7 +7,7 @@
     {% if title %}
         <title>Django Blog | {{title}}</title>
     {% else %}
-        <title>Django,Blog</title>
+        <title>Django Blog</title>
     {% endif %}
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
@@ -19,7 +19,7 @@
             <!--Old Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #4267B2;">
         <a class="navbar-brand" href="{% url 'blog-home' %}"><h1 style="text-align: center; margin: 20px; color:white">
-            Django Blog
+            Daniyal's Blog
           </h1>
           </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,14 +27,14 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="font-size:25px; margin: 10px;padding:10px;">
           <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="{% url 'blog-home' %}"><i class="fas fa-home"></i> Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link active" href="{% url 'blog-about' %}"><i class="fas fa-address-card"></i> About</a>
+            <a class="nav-item nav-link active" href="{% url 'blog-home' %}"><i class="fas fa-home"> Home</i>  <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link active" href="{% url 'blog-about' %}"><i class="fas fa-address-card"> About</i></a>
             {% if user.is_authenticated %}
               <!--<h3>Hi {{user.username}}</h3>
               <button class="btn btn-outline-info" type="submit"><i class="fas fa-user-plus"></i>Logout</button>-->
-              <a class="nav-item nav-link active" href="{% url 'profile' %}"><i class="fas fa-user"></i> Profile <span class="sr-only">(current)</span></a>
-              <a class="nav-item nav-link active" href="{% url 'profile' %}"><i class="fas fa-user"></i> Profile <span class="sr-only">(current)</span></a>
-              <a class="nav-item nav-link active" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Logout <span class="sr-only">(current)</span></a>
+              <a class="nav-item nav-link active" href="{% url 'profile' %}"><i class="fas fa-user"> Profile</i>  <span class="sr-only">(current)</span></a>
+              <a class="nav-item nav-link active" href="{% url 'post-create' %}"><i class="fas fa-comment-alt">  New Post</i> <span class="sr-only">(current)</span></a>
+              <a class="nav-item nav-link active" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"> Logout</i>  <span class="sr-only">(current)</span></a>
             {% else %}
             <a class="nav-item nav-link" href="{% url 'register' %}"><i class="fas fa-user-plus"></i> Sign up</a>
             <a class="nav-item nav-link" href="{% url 'login' %}" tabindex="-1" aria-disabled="true"><i class="fas fa-sign-in-alt"></i>Login</a>
