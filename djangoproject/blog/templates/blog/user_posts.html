@@ -1,7 +1,7 @@
 {% extends 'blog/base.html' %}
 {% block content %}
-<h1 style="text-align: center; margin: 40px; font-size: 50px; color: #4267b2">
-  Blog Home
+<h1 class="mb-3" style="text-align: center; margin: 40px; font-size: 50px; color: #4267b2">
+  Post by {{ view.kwrgs.username }} ({{ page_obj.paginator.count }})
 </h1>
 <div class="container">
     {% for post in posts %}
